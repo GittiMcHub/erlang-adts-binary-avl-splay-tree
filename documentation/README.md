@@ -172,33 +172,29 @@ Fehlerhafte Operationen auf auf dem Baum werden schlicht nicht ausgeführt und d
 - ist das Element größer dem Atom, füge das Element mit dieser Funktion in den rechten Teilbaum ein
 
 3. Addiere 1 zur Höhe des Knotens, wenn sich die maximale Höhe der Kinder verändert hat
-4. Prüfe, ob die Höhe des Knotens angepasst werden muss (d.h. die Höhe des neuen Kindes – die
-Höhe des Knotens ergibt 0)
-4a. Hat sich die Höhe nicht geändert, hat sich die Balance des Knotens nicht verändert und der
-Baum kann zurückgegeben werden
+4. Prüfe, ob die Höhe des Knotens angepasst werden muss (d.h. die Höhe des neuen Kindes – die Höhe des Knotens ergibt 0)\
+4a. Hat sich die Höhe nicht geändert, hat sich die Balance des Knotens nicht verändert und der Baum kann zurückgegeben werden\
 4b. Muss die Höhe angepasst werden, addiere 1 zur maximalen Höhe der Kinder
-5. Hat sich die Balance geändert, wird geprüft, ob die Balance noch stimmt (Differenz Höhe des
-rechten Kindes und Höhe des linken Kindes)
-5a. Liegt die Differenz zwischen -1 und 1, ist der Baum in Balance und kann zurückgegeben werden
+5. Hat sich die Balance geändert, wird geprüft, ob die Balance noch stimmt (Differenz Höhe des rechten Kindes und Höhe des linken Kindes)\
+5a. Liegt die Differenz zwischen -1 und 1, ist der Baum in Balance und kann zurückgegeben werden\
 5b. Liegt die Differenz außerhalb von -1 und 1, muss balanciert werden
-6. Unterscheide 4 Fälle<sup>[12](#note12)</sup>
-6a. Left-Left Case - Balancierung – mit einfacher Rotation
-Die Überlast kommt vom linken Kind im linken Teilbaum
-→ Führe eine Rechtsrotation an der Wurzel dieses (Teil-)Baumes durch
+6. Unterscheide 4 Fälle<sup>[12](#note12)</sup>\
+6a. Left-Left Case - Balancierung – mit einfacher Rotation\
+Die Überlast kommt vom linken Kind im linken Teilbaum\
+→ Führe eine Rechtsrotation an der Wurzel dieses (Teil-)Baumes durch\
 (siehe rotateRight: btree → btree)
-6b. Left-Right Case - Balancierung – mit doppelter Rotation
-Die Überlast kommt vom rechten Kind im linken Teilbaum
-→ Führe eine Linksrotation mit dem linken Teilbaum durch und anschließend eine
-Rechtsrotation an der Wurzel dieses (Teil-)Baumes
+6b. Left-Right Case - Balancierung – mit doppelter Rotation\
+Die Überlast kommt vom rechten Kind im linken Teilbaum\
+→ Führe eine Linksrotation mit dem linken Teilbaum durch und anschließend eine Rechtsrotation an der Wurzel dieses (Teil-)Baumes\
 (siehe rotateLeft: btree → btree und rotateRight: btree → btree)
-6c. Right-Right Case - Balancierung – mit einfacher Rotation
-Die Überlast kommt vom rechten Kind im rechten Teilbaum
-→ Führe eine Linksrotation an der Wurzel dieses (Teil-)Baumes durch
+6c. Right-Right Case - Balancierung – mit einfacher Rotation\
+Die Überlast kommt vom rechten Kind im rechten Teilbaum\
+→ Führe eine Linksrotation an der Wurzel dieses (Teil-)Baumes durch\
 (siehe rotateLeft: btree → btree)
-6d. Right-Left Case - Balancierung – mit doppelter Rotation
-Die Überlast kommt vom linken Kind im rechten Teilbaum
-→ Führe eine Rechtsrotation mit dem rechten Teilbaum durch und anschließend eine
-Linksrotation an der Wurzel dieses (Teil-)Baumes
+6d. Right-Left Case - Balancierung – mit doppelter Rotation\
+Die Überlast kommt vom linken Kind im rechten Teilbaum\
+→ Führe eine Rechtsrotation mit dem rechten Teilbaum durch und anschließend eine\
+Linksrotation an der Wurzel dieses (Teil-)Baumes\
 (siehe rotateRight: btree → btree und rotateLeft: btree → btree )
 7. Gebe den (Teil-)Baum zurück
 
@@ -210,41 +206,37 @@ vorhanden und der leere Baum wird zurückgegeben
 mit Schritt 9 fort.
 4. Ist das Element größter dem Atom, versuche es im rechten Teilbaum zu löschen und fahre mit
 Schritt 9 fort.
-5. Ist das Element gleich dem Atom, unterscheide folgende Fälle:
-5a. Hat der Baumknoten keine Kinder, kann das Element gelöscht werden und ein leerer Baum
-zurückgegeben werden
-5b. Hat der Baumknoten nur ein Kind, kann der entsprechende Teilbaum den Platz einnehmen und
-zurückgegeben werden
+5. Ist das Element gleich dem Atom, unterscheide folgende Fälle:\
+5a. Hat der Baumknoten keine Kinder, kann das Element gelöscht werden und ein leerer Baum zurückgegeben werden\
+5b. Hat der Baumknoten nur ein Kind, kann der entsprechende Teilbaum den Platz einnehmen und zurückgegeben werden\
 5c. Der Baumknoten hat links und rechts Teilbäume und der Ablauf geht weiter
-6. Suche und merke das kleinste Element des rechten Teilbaumes
+6. Suche und merke das kleinste Element des rechten Teilbaumes\
 (siehe findTheSmallest: btree -> Integer)
 7. Lösche das kleinste Element aus dem rechten Teilbaum
-8. Ersetze das zu löschende Element des Baumknotens mit dem gemerkten kleinsten Element des
-rechten Teilbaumes
-9. Prüfe, ob sich die Höhe geändert hat
-9a. Wenn sich die Höhe nicht geändert hat, gebe den (Teil-)Baum zurück
-9b. Hat sich die Höhe geändert, passe die Höhe an (Höhe -1)
-10. Prüfe, ob sich der Knoten noch AVL ausgeglichen ist (Höhe rechtes Kind – Höhe Linkes Kind
-zwischen -1 und 1)
-10a. Ist der Knoten in Balance, gebe den (Teil-)Baum zurück
-10b. Ist der Knoten im Ungleichgewicht , unterscheide 4 Fälle<sup>[13](#note13)</sup>
-11a. Left-Left Case - Balancierung – mit einfacher Rotation
-Die Überlast kommt vom linken Kind im linken Teilbaum
-→ Führe eine Rechtsrotation an der Wurzel dieses (Teil-)Baumes durch
-(siehe rotateRight: btree → btree)
-11b. Left-Right Case - Balancierung – mit doppelter Rotation
-Die Überlast kommt vom rechten Kind im linken Teilbaum
-→ Führe eine Linksrotation mit dem linken Teilbaum durch und anschließend eine
-Rechtsrotation an der Wurzel dieses (Teil-)Baumes
-(siehe rotateLeft: btree → btree und rotateRight: btree → btree)
-11c. Right-Right Case - Balancierung – mit einfacher Rotation
-Die Überlast kommt vom rechten Kind im rechten Teilbaum
-→ Führe eine Linksrotation an der Wurzel dieses (Teil-)Baumes durch
-(siehe rotateLeft: btree → btree)
-11d. Right-Left Case - Balancierung – mit doppelter Rotation
-Die Überlast kommt vom linken Kind im rechten Teilbaum
-→ Führe eine Rechtsrotation mit dem rechten Teilbaum durch und anschließend eine
-Linksrotation an der Wurzel dieses (Teil-)Baumes
+8. Ersetze das zu löschende Element des Baumknotens mit dem gemerkten kleinsten Element des rechten Teilbaumes
+9. Prüfe, ob sich die Höhe geändert hat\
+9a. Wenn sich die Höhe nicht geändert hat, gebe den (Teil-)Baum zurück\
+9b. Hat sich die Höhe geändert, passe die Höhe an (Höhe -1)\
+10. Prüfe, ob sich der Knoten noch AVL ausgeglichen ist (Höhe rechtes Kind – Höhe Linkes Kind zwischen -1 und 1)\
+10a. Ist der Knoten in Balance, gebe den (Teil-)Baum zurück\
+10b. Ist der Knoten im Ungleichgewicht , unterscheide 4 Fälle<sup>[13](#note13)</sup>\
+11a. Left-Left Case - Balancierung – mit einfacher Rotation\
+Die Überlast kommt vom linken Kind im linken Teilbaum\
+→ Führe eine Rechtsrotation an der Wurzel dieses (Teil-)Baumes durch\
+(siehe rotateRight: btree → btree)\
+11b. Left-Right Case - Balancierung – mit doppelter Rotation\
+Die Überlast kommt vom rechten Kind im linken Teilbaum\
+→ Führe eine Linksrotation mit dem linken Teilbaum durch und anschließend eine\
+Rechtsrotation an der Wurzel dieses (Teil-)Baumes\
+(siehe rotateLeft: btree → btree und rotateRight: btree → btree)\
+11c. Right-Right Case - Balancierung – mit einfacher Rotation\
+Die Überlast kommt vom rechten Kind im rechten Teilbaum\
+→ Führe eine Linksrotation an der Wurzel dieses (Teil-)Baumes durch\
+(siehe rotateLeft: btree → btree)\
+11d. Right-Left Case - Balancierung – mit doppelter Rotation\
+Die Überlast kommt vom linken Kind im rechten Teilbaum\
+→ Führe eine Rechtsrotation mit dem rechten Teilbaum durch und anschließend eine\
+Linksrotation an der Wurzel dieses (Teil-)Baumes\
 (siehe rotateRight: btree → btree und rotateLeft: btree → btree )
 12. Gebe den veränderten Baum zurück
 
@@ -264,7 +256,7 @@ Linksrotation an der Wurzel dieses (Teil-)Baumes
 1. Schreibe die Graphbezeichnung „digraph“ und den Namen „avltree“ in die Datei<sup>[15](#note15)</sup> . Füge eine
 geschweifte Klammer ein, um die stmt_list <sup>[16](#note16)</sup> zu öffnen.
 Die geschriebene Zeile sollte also wie folgt aussehen: digraph avltree {
-2. Schreibe je eine Zeile für den linken und rechten Teilbaum wie folgt
+2. Schreibe je eine Zeile für den linken und rechten Teilbaum wie folgt\
 <Element des Knotens> → <Element des Kindknotens> [label = <Höhe des Kindknotens>];
 3. Für leere Teilbäume wird nichts geschrieben.
 4. Rufe diese Funktion für vorhandene Teilbäume wieder auf
@@ -310,8 +302,6 @@ z. Sei T3 der rechte Teilbaum von y und x das linke Kind von y. x hat die Kinder
 4. Korrigiere die Höhe von z mit der maximalen Höhe der beiden Kinder +1
 5. Gebe den rotierten Baum zurück
 
-
-<sup>[2](#note2)</sup>
 # Fußnoten
 <a name="note1">1</a>: https://de.wikipedia.org/wiki/Bin%C3%A4rer_Suchbaum#Terminologie
 <a name="note2">2</a>: https://de.wikipedia.org/wiki/Bin%C3%A4rbaum#Weitere_Begriffe , 28.11.2018
@@ -334,4 +324,3 @@ z. Sei T3 der rechte Teilbaum von y und x das linke Kind von y. x hat die Kinder
 <a name="note19">19</a>: Desktop User Guide for MicroStrategy 10, Seite 199
 <a name="note20">20</a>: http://www-lehre.informatik.uni-osnabrueck.de/~ainf/2000/skript/node60.html , 30.11.2018
 <a name="note21">21</a>: http://erlang.org/doc/efficiency_guide/listHandling.html , 01.12.2018
-

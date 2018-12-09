@@ -65,7 +65,6 @@ Das Element des linken Teilbaumes ist kleiner als das Integer Atom. Das Element 
 
 ### initBT: ∅ → btree
 Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.
-[documentation#isbt-btree--bool](documentation#isbt-btree--bool)
 
 ### isEmptyBT: btree → bool
 Die Funktion prüft, ob der übergebene Btree leer ist und gibt ein Wahr oder Falsch zurück. 
@@ -88,37 +87,48 @@ Diese Funktion bekommt einen Baum übergeben, und gibt Diesen als sortierte List
 ## AVLTree
 
 ### initBT: ∅ → btree
-Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.
+Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.\
+[Vorgehensweise](documentation#initbt---btree)
 
 ### isEmptyBT: btree → bool
 Die Funktion prüft, ob der übergebene Btree leer ist und gibt ein Wahr oder Falsch zurück.
+[Vorgehensweise](documentation#isemptybt-btree--bool)
+
 
 ### equalBT: btree × btree → bool
 Diese Funktion prüft zwei Bäume auf semantische Gleichheit
+[Vorgehensweise](documentation#equalbt-btree--btree--bool)
 
 ### isBT: btree → bool
+Prüft, ob der Baum ein Binärbaum mit AVL Eigenschaften ist.
+[Vorgehensweise](documentation#isbt-btree--bool)
 
 ### insertBT: btree × elem → btree
 Diese Funktion fügt einem AVL Baum ein Blatt hinzu und gibt den erweiterten AVL Baum zurück
+[Vorgehensweise](documentation#insertbt-btree--elem--btree)
 
 ### deleteBT: btree × elem → btree
 Diese Funktion löscht ein Element aus einem Baum. Und zwar ist es wichtig, dass der Baum danach immer noch der Datenstrukturdefinition entspricht sowie AVL ausgeglichen ist.
+[Vorgehensweise](documentation#deletebt-btree--elem--btree)
 
 ### findBT: btree × elem → integer
 Diese Funktion bekommt ein Baum in dem das übergeben Element gesucht ist und gibt die Höhe des Elementes innerhalb des Baumes zurück.
+[Vorgehensweise](documentation#findbt-btree--elem--integer)
 
 ### inOrderBT: btree → list
 Diese Funktion bekommt einen Baum übergeben, und gibt Diesen als sortierte Liste zurück
+[Vorgehensweise](documentation#inorderbt-btree--list)
 
 ### printBT: btree × filename → dot
 Diese Funktion schreibt den Baum im dot Format (https://www.graphviz.org/doc/info/lang.html) in die angegebene Datei. Dabei werden nur die für AVL Bäume notwendigen Notationen unterstützt.
-Die Dateistruktur für einen Binär Baum könnte beispielsweise wie folgt aussehen:
+Die Dateistruktur für einen Binär Baum könnte beispielsweise wie folgt aussehen:\
 ```
 digraph avltree {
 10 → 5 [label = 1];
 10 → 15 [label = 1];
 }
 ```
+[Vorgehensweise](documentation#printbt-btree--filename--dot)
 
 ## Autor
 
