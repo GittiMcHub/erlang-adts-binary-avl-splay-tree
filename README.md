@@ -1,15 +1,14 @@
 # Erlang ADTs B-Tree and AVL-Tree
 
-Diese Repo enthält eine Erlang Implementierung für die Abstrakten Datentypen (ADT) Binary Tree (btree.erl) und AVL Tree (avltree.erl)
+Dieses Repo enthält eine Erlang Implementierung für die Abstrakten Datentypen (ADT) Binary Tree (btree.erl) und AVL Tree (avltree.erl).
 
-Neben der Implementierung gibt es noch eine ausführliche Ausarbeitung über die Vorgehens- und Funktionsweise des AVL Baumes.
+Neben der Implementierung gibt es eine ausführliche Ausarbeitung über die Vorgehens- und Funktionsweise des AVL Baumes.
 
-Siehe dazu: documentation
+Siehe dazu: [documentation/README.md](documentation/README.md)
 
 Status/TODOs:
-- Illustrationen in Dokumentation
+- Illustrationen in die Dokumentation einfügen
 - Hinweis auf Listhandling bei inOrderBT
-- Laufzeitmessung auch aufnehmen?
 
 ## Getting Started
 
@@ -66,6 +65,7 @@ Das Element des linken Teilbaumes ist kleiner als das Integer Atom. Das Element 
 
 ### initBT: ∅ → btree
 Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.
+[documentation#isbt-btree--bool](documentation#isbt-btree--bool)
 
 ### isEmptyBT: btree → bool
 Die Funktion prüft, ob der übergebene Btree leer ist und gibt ein Wahr oder Falsch zurück. 
@@ -127,6 +127,6 @@ digraph avltree {
 
 ## Lizenz
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 

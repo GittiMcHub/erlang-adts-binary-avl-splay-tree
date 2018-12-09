@@ -179,8 +179,7 @@ Baum kann zurückgegeben werden
 4b. Muss die Höhe angepasst werden, addiere 1 zur maximalen Höhe der Kinder
 5. Hat sich die Balance geändert, wird geprüft, ob die Balance noch stimmt (Differenz Höhe des
 rechten Kindes und Höhe des linken Kindes)
-5a. Liegt die Differenz zwischen -1 und 1, ist der Baum in Balance und kann zurückgegeben
-werden
+5a. Liegt die Differenz zwischen -1 und 1, ist der Baum in Balance und kann zurückgegeben werden
 5b. Liegt die Differenz außerhalb von -1 und 1, muss balanciert werden
 6. Unterscheide 4 Fälle<sup>[12](#note12)</sup>
 6a. Left-Left Case - Balancierung – mit einfacher Rotation
