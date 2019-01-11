@@ -1,14 +1,17 @@
 # Erlang Implementierung der Binärbaum ADTs: B-, AVL- & Splay-Tree
 
-Dieses Repo enthält Erlang Implementierungen für die Abstrakten Datentypen (ADT):
+Im Rahmen des Studiengangs "Angewandte Informatik" sollten für das Fach "Algorithmen und Datenstrukturen" diverese ADTs implementiert werden.
+
+Dieses Repo enthält Erlang die Implementierungen für folgende abstrakte Datentypen (ADT):\
 [Binärbaum](btree.erl)\
 [AVL-Baum](avltree.erl)\
 [Splay Baum](splaytree.erl)
 
-Neben den Implementierungen gibt es die Entwürfe zu den einzelnen ADTs unter: [documentation/README.md](documentation/README.md)
+Neben den Implementierungen gibt es die Entwürfe zu den einzelnen ADTs unter: [documentation/README.md](documentation/README.md)\
 [Entwurf: Binärbaum](documentation/btree.md)\
 [Entwurf: AVL-Baum](documentation/avltree.md)\
 [Entwurf: Splay Baum](documentation/splaytree.md)
+
 
 
 Status/TODOs:
