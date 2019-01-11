@@ -1,8 +1,15 @@
-# Erlang Binary Tree ADTs (B-Tree, AVL-Tree, Splay-Tree)
+# Erlang Implementierung der Binärbaum ADTs: B-, AVL- & Splay-Tree
 
-Dieses Repo enthält Erlang Implementierungen für die Abstrakten Datentypen (ADT) Binary Tree (btree.erl), AVL Tree (avltree.erl) und Splay Tree.
+Dieses Repo enthält Erlang Implementierungen für die Abstrakten Datentypen (ADT):
+[Binärbaum](btree.erl)\
+[AVL-Baum](avltree.erl)\
+[Splay Baum](splaytree.erl)
 
 Neben den Implementierungen gibt es die Entwürfe zu den einzelnen ADTs unter: [documentation/README.md](documentation/README.md)
+[Entwurf: Binärbaum](documentation/btree.md)\
+[Entwurf: AVL-Baum](documentation/avltree.md)\
+[Entwurf: Splay Baum](documentation/splaytree.md)
+
 
 Status/TODOs:
 - Illustrationen in die Dokumentation einfügen
@@ -60,7 +67,7 @@ Atom dargestellt.
 Das Element des linken Teilbaumes ist kleiner als das Integer Atom. Das Element des rechten Teilbaums ist größer als das Integer Atom. Die Teilbäume folgen der oben definierten Datenstruktur.
 
 ## BTree
-
+[Vorgehensweisen](documentation/btree.md)
 ### initBT: ∅ → btree
 Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.
 
@@ -83,39 +90,39 @@ Diese Funktion bekommt ein Baum in dem das übergeben Element gesucht ist und gi
 Diese Funktion bekommt einen Baum übergeben, und gibt Diesen als sortierte Liste zurück
 
 ## AVLTree
-
+[Vorgehensweisen](documentation/avltree.md)
 ### initBT: ∅ → btree
 Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.\
-[Vorgehensweise](documentation#initbt---btree)
+[Vorgehensweise](documentation/avltree.md#initbt---btree)
 
 ### isEmptyBT: btree → bool
 Die Funktion prüft, ob der übergebene Btree leer ist und gibt ein Wahr oder Falsch zurück.
-[Vorgehensweise](documentation#isemptybt-btree--bool)
+[Vorgehensweise](documentation/avltree.md#isemptybt-btree--bool)
 
 
 ### equalBT: btree × btree → bool
 Diese Funktion prüft zwei Bäume auf semantische Gleichheit
-[Vorgehensweise](documentation#equalbt-btree--btree--bool)
+[Vorgehensweise](documentation/avltree.md#equalbt-btree--btree--bool)
 
 ### isBT: btree → bool
 Prüft, ob der Baum ein Binärbaum mit AVL Eigenschaften ist.
-[Vorgehensweise](documentation#isbt-btree--bool)
+[Vorgehensweise](documentation/avltree.md/avltree.md#isbt-btree--bool)
 
 ### insertBT: btree × elem → btree
 Diese Funktion fügt einem AVL Baum ein Blatt hinzu und gibt den erweiterten AVL Baum zurück
-[Vorgehensweise](documentation#insertbt-btree--elem--btree)
+[Vorgehensweise](documentation/avltree.md#insertbt-btree--elem--btree)
 
 ### deleteBT: btree × elem → btree
 Diese Funktion löscht ein Element aus einem Baum. Und zwar ist es wichtig, dass der Baum danach immer noch der Datenstrukturdefinition entspricht sowie AVL ausgeglichen ist.
-[Vorgehensweise](documentation#deletebt-btree--elem--btree)
+[Vorgehensweise](documentation/avltree.md#deletebt-btree--elem--btree)
 
 ### findBT: btree × elem → integer
 Diese Funktion bekommt ein Baum in dem das übergeben Element gesucht ist und gibt die Höhe des Elementes innerhalb des Baumes zurück.
-[Vorgehensweise](documentation#findbt-btree--elem--integer)
+[Vorgehensweise](documentation/avltree.md#findbt-btree--elem--integer)
 
 ### inOrderBT: btree → list
 Diese Funktion bekommt einen Baum übergeben, und gibt Diesen als sortierte Liste zurück
-[Vorgehensweise](documentation#inorderbt-btree--list)
+[Vorgehensweise](documentation/avltree.md#inorderbt-btree--list)
 
 ### printBT: btree × filename → dot
 Diese Funktion schreibt den Baum im dot Format (https://www.graphviz.org/doc/info/lang.html) in die angegebene Datei. Dabei werden nur die für AVL Bäume notwendigen Notationen unterstützt.
@@ -126,11 +133,11 @@ digraph avltree {
 10 → 15 [label = 1];
 }
 ```
-[Vorgehensweise](documentation#printbt-btree--filename--dot)
+[Vorgehensweise](documentation/avltree.md#printbt-btree--filename--dot)
 
 
 ## SplayTree
-
+[Vorgehensweisen](documentation/splaytree.md)
 ### initBT: ∅ → btree
 Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.
 
@@ -152,10 +159,10 @@ Diese Funktion fügt einem Splay Baum ein Blatt hinzu und gibt den veränderten/
 ### deleteBT: btree × elem → btree
 Diese Funktion löscht ein Element aus einem Baum. Das Element wird zur Wurzel bewegt, dann gelöscht und anschließend werden die zwei Teilbäume zu einem umgewandelt.
 
-### findBT: btree × elem → integer
+### findBT: btree × elem → integer, btree
 Diese Funktion bekommt ein Baum in dem das übergebene Element gesucht ist und gibt die Höhe des Elementes innerhalb des Baumes zurück. Hier bleibt der Baum unverändert, deswegen wird der originale Baum einfach als zusätzlicher Parameter gespeichert und sobald die richtige Höhe bestimmt wurde, wird auch der originale Baum zurückgegeben.   
 
-### findTP: btree × elem → integer
+### findTP: btree × elem → integer, btree
 Diese Funktion bekommt ein Baum in dem das übergebene Element gesucht ist und gibt die Höhe des Elementes innerhalb des Baumes zurück. Das gesuchte Element soll jetzt zur Wurzel gebracht werden. Da der Baum sich verändern wird, übergibt jeder Teil der Methode auch den (Teil-)Baum zurück.
 
 ### inOrderBT: btree → list
