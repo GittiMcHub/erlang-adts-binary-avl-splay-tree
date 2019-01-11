@@ -1,10 +1,8 @@
-# Erlang ADTs B-Tree and AVL-Tree
+# Erlang Binary Tree ADTs (B-Tree, AVL-Tree, Splay-Tree)
 
-Dieses Repo enthält eine Erlang Implementierung für die Abstrakten Datentypen (ADT) Binary Tree (btree.erl) und AVL Tree (avltree.erl).
+Dieses Repo enthält Erlang Implementierungen für die Abstrakten Datentypen (ADT) Binary Tree (btree.erl), AVL Tree (avltree.erl) und Splay Tree.
 
-Neben der Implementierung gibt es eine ausführliche Ausarbeitung über die Vorgehens- und Funktionsweise des AVL Baumes.
-
-Siehe dazu: [documentation/README.md](documentation/README.md)
+Neben den Implementierungen gibt es die Entwürfe zu den einzelnen ADTs unter: [documentation/README.md](documentation/README.md)
 
 Status/TODOs:
 - Illustrationen in die Dokumentation einfügen
@@ -16,7 +14,7 @@ Status/TODOs:
 
 -> https://www.erlang.org/
 
-Installierbar auf Ubuntu z.B. mit 
+Installierbar auf Ubuntu z.B. mit
 
 ```
 sudo apt install erlang
@@ -27,7 +25,7 @@ sudo apt install erlang
 Module kompillieren (Beispiele mit der Erlangshell "erl"):
 
 ```
-erl> c(btree), c(avltree).
+erl> c(btree), c(avltree), c(splaytree).
 ```
 
 Beispiel Element "99" einfügen:
@@ -67,7 +65,7 @@ Das Element des linken Teilbaumes ist kleiner als das Integer Atom. Das Element 
 Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.
 
 ### isEmptyBT: btree → bool
-Die Funktion prüft, ob der übergebene Btree leer ist und gibt ein Wahr oder Falsch zurück. 
+Die Funktion prüft, ob der übergebene Btree leer ist und gibt ein Wahr oder Falsch zurück.
 
 ### equalBT: btree × btree → bool
 Diese Funktion prüft zwei Bäume auf semantische Gleichheit
@@ -76,7 +74,7 @@ Diese Funktion prüft zwei Bäume auf semantische Gleichheit
 Diese Funktion fügt einem Binär Baum ein Blatt hinzu und gibt den erweiterten Binär Baum zurück
 
 ### deleteBT: btree × elem → btree
-Diese Funktion löscht ein Element aus einem Baum. 
+Diese Funktion löscht ein Element aus einem Baum.
 
 ### findBT: btree × elem → integer
 Diese Funktion bekommt ein Baum in dem das übergeben Element gesucht ist und gibt die Höhe des Elementes innerhalb des Baumes zurück.
@@ -130,6 +128,43 @@ digraph avltree {
 ```
 [Vorgehensweise](documentation#printbt-btree--filename--dot)
 
+
+## SplayTree
+
+### initBT: ∅ → btree
+Die Funktion „initBT“ bekommt keinen Übergabeparameter und gibt einen leeren Baum zurück, welcher als leeres Tupel repräsentiert wird.
+
+### isEmptyBT: btree → bool
+Die Funktion prüft, ob der übergebene Btree leer ist und gibt ein Wahr oder Falsch zurück.
+
+### equalBT: btree × btree → bool
+Diese Funktion prüft zwei Bäume auf semantische Gleichheit.
+
+### eqBT: btree × btree → bool
+Diese Funktion prüft zwei Bäume auf semantische und syntaktische Gleichheit.
+
+### isBT: btree → bool
+Diese Funktion prüft ob der Übergebene Baum ein Binärbaum ist. Außerdem werden die Datentypen geprüft.
+
+### insertBT: btree × elem → btree
+Diese Funktion fügt einem Splay Baum ein Blatt hinzu und gibt den veränderten/erweiterten Splay Baum zurück
+
+### deleteBT: btree × elem → btree
+Diese Funktion löscht ein Element aus einem Baum. Das Element wird zur Wurzel bewegt, dann gelöscht und anschließend werden die zwei Teilbäume zu einem umgewandelt.
+
+### findBT: btree × elem → integer
+Diese Funktion bekommt ein Baum in dem das übergebene Element gesucht ist und gibt die Höhe des Elementes innerhalb des Baumes zurück. Hier bleibt der Baum unverändert, deswegen wird der originale Baum einfach als zusätzlicher Parameter gespeichert und sobald die richtige Höhe bestimmt wurde, wird auch der originale Baum zurückgegeben.   
+
+### findTP: btree × elem → integer
+Diese Funktion bekommt ein Baum in dem das übergebene Element gesucht ist und gibt die Höhe des Elementes innerhalb des Baumes zurück. Das gesuchte Element soll jetzt zur Wurzel gebracht werden. Da der Baum sich verändern wird, übergibt jeder Teil der Methode auch den (Teil-)Baum zurück.
+
+### inOrderBT: btree → list
+Diese Funktion bekommt einen Baum übergeben, und gibt diesen als sortierte Liste zurück.
+
+### printBT: btree × filename → dot
+Diese Funktion schreibt den Baum im dot Format (https://www.graphviz.org/doc/info/lang.html) in die angegebene Datei. Dabei werden nur die für AVL Bäume notwendigen Notationen unterstützt.
+
+
 ## Autor
 
 * **GittiMcHub** - [GittiMcHub](https://github.com/GittiMcHub)
@@ -138,5 +173,3 @@ digraph avltree {
 ## Lizenz
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-
