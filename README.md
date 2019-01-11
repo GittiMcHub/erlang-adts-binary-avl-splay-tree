@@ -1,6 +1,6 @@
 # Erlang Implementierung der Binärbaum ADTs: B-, AVL- & Splay-Tree
 
-Im Rahmen des Studiengangs "Angewandte Informatik" sollten für das Fach "Algorithmen und Datenstrukturen" diverese ADTs implementiert werden.
+Im Rahmen des Studiengangs "Angewandte Informatik" sollten für das Fach "Algorithmen und Datenstrukturen" diverse ADTs implementiert werden.
 
 Dieses Repo enthält Erlang die Implementierungen für folgende abstrakte Datentypen (ADT):\
 [Binärbaum](btree.erl)\
