@@ -1,8 +1,8 @@
 # Erlang Implementierung der Binärbaum ADTs: B-, AVL- & Splay-Tree
 
-Im Rahmen des Studiengangs "Angewandte Informatik" sollten für das Fach "Algorithmen und Datenstrukturen" diverse ADTs implementiert werden.
+Im Rahmen des Studiengangs "Angewandte Informatik" sollten für das Fach "Algorithmen und Datenstrukturen" diverse abstrakte Datentypen implementiert werden.
 
-Dieses Repo enthält Erlang die Implementierungen für folgende abstrakte Datentypen (ADT):\
+Dieses Repo enthält die Erlang Implementierungen für folgende ADTs:\
 [Binärbaum](btree.erl)\
 [AVL-Baum](avltree.erl)\
 [Splay Baum](splaytree.erl)
@@ -57,7 +57,7 @@ Für die Implementierung in Erlang werden Tupel mit folgender Struktur verwendet
 {<Element>,<Höhe>,<linker Teilbaum>,<rechter Teilbaum>}
 ```
 Ein leerer Baum wird als leeres Tupel „{}“ repräsentiert.
-Fehlerhafte Operationen auf auf dem Baum werden schlicht nicht ausgeführt und das Ergebnis sieht aus, als hätte diese Operation nicht stattgefunden.
+Fehlerhafte Operationen auf dem Baum werden schlicht nicht ausgeführt und das Ergebnis sieht aus, als hätte diese Operation nicht stattgefunden.
 
 ### Element
 Das Element eines Knoten ist ein Integer Atom
